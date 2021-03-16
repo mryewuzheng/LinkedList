@@ -1,0 +1,36 @@
+首先链表为两个节点，一个头部节点，一个尾部节点，尾部节点与下一个节点相连
+
+模拟链表的关键点在于模拟节点，一个节点应有他的所含编号，所含信息，以及下一个节点信息
+
+头部节点即直接将尾部节点指向其下一个元素本身即可
+
+添加节点就是将他们链接即可
+
+先判读该链表是否有值，若没有则直接添加
+   if(temp.next == null){
+       break;
+   }
+
+若有则判断其编号是否与链表中的编号一致
+if(temp.no == heroNode.no){
+   System.out.println("编号存在，不能插入");
+   flag = true;
+   break;
+
+而后判断temp.next 是否>插入的值
+}else if(temp.next.no>heroNode.no){
+   break;
+}
+若大于，则就在temp与temp.next 中插入值
+
+先将 插入值.next = temp.next
+
+再将 temp.next = 插入值
+
+if(flag == true){
+System.out.println("该编号"+temp.no+"已存在，请重新插入不同编号的值");
+    }else{
+     heroNode.next =temp.next;
+     temp.next=heroNode;
+
+    }
